@@ -27,12 +27,27 @@ public class BankRestController {
     }
 
     //TODO http://localhost:9002/get_user/{numberPhone}
-    @GetMapping("get_user/{numberPhone}")
+    @GetMapping("/get_user/{numberPhone}")
     public ResponseEntity<UserDto> getUser(@PathVariable("numberPhone") Long phoneNumber) {
         try {
             System.out.println("Пришли данные: " + phoneNumber);
             UserDto userDto = userService.getUser(phoneNumber);
-            return ResponseEntity.status(HttpStatus.CREATED).body(userDto);
+            return ResponseEntity.status(HttpStatus.OK).body(userDto);
+        } catch (Exception ex) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    //http://localhost:9002/transaction?fromPhoneNumber=89676400940&toPhoneNumber=89676400942&sum=99
+    //TODO http://localhost:9002/transaction
+    @PostMapping("/transaction")
+    public ResponseEntity<String> transaction(
+            @RequestParam("fromPhoneNumber") long fromPhoneNumber,
+            @RequestParam("toPhoneNumber") long toPhoneNumber,
+            @RequestParam("sum") int sum) {
+        try {
+            String response = userService.transaction(fromPhoneNumber, toPhoneNumber, sum);
+            return ResponseEntity.status(HttpStatus.OK).body(response);
         } catch (Exception ex) {
             return ResponseEntity.badRequest().build();
         }

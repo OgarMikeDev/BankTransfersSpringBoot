@@ -9,8 +9,6 @@ public class User {
     @Id
     @Column(name = "phone_number")
     private long phoneNumber;
-    @Column(name = "number_account")
-    private int numberAccount;
     private String name;
     private int sum;
     private boolean block = false;
@@ -21,14 +19,6 @@ public class User {
 
     public void setPhoneNumber(long phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public int getNumberAccount() {
-        return numberAccount;
-    }
-
-    public void setNumberAccount(int numberAccount) {
-        this.numberAccount = numberAccount;
     }
 
     public String getName() {
@@ -59,7 +49,6 @@ public class User {
     public String toString() {
         return "User{" +
                 "phoneNumber=" + phoneNumber +
-                ", numberAccount=" + numberAccount +
                 ", name='" + name + '\'' +
                 ", sum=" + sum +
                 ", block=" + block +
