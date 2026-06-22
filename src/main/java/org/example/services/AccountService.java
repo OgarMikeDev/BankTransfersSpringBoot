@@ -19,6 +19,11 @@ public class AccountService {
         return fromUserToUserDto(getUser);
     }
 
+    public UserDto getUser(long phoneNumber) {
+        User user = userRepository.findByPhoneNumber(phoneNumber);
+        return fromUserToUserDto(user);
+    }
+
     public UserDto fromUserToUserDto(User user) {
         UserDto userDto = new UserDto();
         userDto.setName(user.getName());
