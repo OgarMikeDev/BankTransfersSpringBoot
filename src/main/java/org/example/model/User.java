@@ -12,6 +12,7 @@ public class User {
     @Column(name = "number_account")
     private int numberAccount;
     private String name;
+    private boolean block = false;
 
     public long getPhoneNumber() {
         return phoneNumber;
@@ -37,12 +38,21 @@ public class User {
         this.name = name;
     }
 
+    public boolean isBlock() {
+        return block;
+    }
+
+    public void setBlock(boolean block) {
+        this.block = block;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "phoneNumber=" + phoneNumber +
                 ", numberAccount=" + numberAccount +
                 ", name='" + name + '\'' +
+                ", block=" + block +
                 '}';
     }
 }

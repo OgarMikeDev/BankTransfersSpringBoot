@@ -4,6 +4,7 @@ public class UserDto {
     private long phone;
     private int account;
     private String name;
+    private boolean block = false;
 
     public long getPhone() {
         return phone;
@@ -29,12 +30,21 @@ public class UserDto {
         this.name = name;
     }
 
+    public boolean isBlock() {
+        return block;
+    }
+
+    public void setBlock(boolean block) {
+        this.block = block;
+    }
+
     @Override
     public String toString() {
         return "UserDto{" +
                 "phone=" + phone +
                 ", account=" + account +
                 ", name='" + name + '\'' +
+                ", block=" + block +
                 '}';
     }
 }

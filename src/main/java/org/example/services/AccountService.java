@@ -29,6 +29,7 @@ public class AccountService {
         userDto.setName(user.getName());
         userDto.setAccount(user.getNumberAccount());
         userDto.setPhone(user.getPhoneNumber());
+        userDto.setBlock(user.isBlock());
         return userDto;
     }
 }
