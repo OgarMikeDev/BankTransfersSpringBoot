@@ -66,6 +66,7 @@ public class UserService {
 
         if (firstUser.isBlock() || secondUser.isBlock()) {
             response = "Ты заблочен, куся)";
+            //TODO Выброс исключения является условием для отката списания и зачисления денежных средств
             throw new RuntimeException(response);
         }
         return response;
