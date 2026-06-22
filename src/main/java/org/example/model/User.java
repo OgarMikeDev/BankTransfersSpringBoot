@@ -12,6 +12,7 @@ public class User {
     @Column(name = "number_account")
     private int numberAccount;
     private String name;
+    private int sum;
     private boolean block = false;
 
     public long getPhoneNumber() {
@@ -46,12 +47,21 @@ public class User {
         this.block = block;
     }
 
+    public int getSum() {
+        return sum;
+    }
+
+    public void setSum(int sum) {
+        this.sum = sum;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "phoneNumber=" + phoneNumber +
                 ", numberAccount=" + numberAccount +
                 ", name='" + name + '\'' +
+                ", sum=" + sum +
                 ", block=" + block +
                 '}';
     }

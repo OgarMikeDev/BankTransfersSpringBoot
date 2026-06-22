@@ -4,6 +4,7 @@ public class UserDto {
     private long phone;
     private int account;
     private String name;
+    private int sum;
     private boolean block = false;
 
     public long getPhone() {
@@ -38,12 +39,21 @@ public class UserDto {
         this.block = block;
     }
 
+    public int getSum() {
+        return sum;
+    }
+
+    public void setSum(int sum) {
+        this.sum = sum;
+    }
+
     @Override
     public String toString() {
         return "UserDto{" +
                 "phone=" + phone +
                 ", account=" + account +
                 ", name='" + name + '\'' +
+                ", sum=" + sum +
                 ", block=" + block +
                 '}';
     }

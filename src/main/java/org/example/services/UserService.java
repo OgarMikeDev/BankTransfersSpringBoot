@@ -6,10 +6,10 @@ import org.example.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AccountService {
+public class UserService {
     private final UserRepository userRepository;
 
-    public AccountService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
@@ -30,6 +30,7 @@ public class AccountService {
         userDto.setAccount(user.getNumberAccount());
         userDto.setPhone(user.getPhoneNumber());
         userDto.setBlock(user.isBlock());
+        userDto.setSum(user.getSum());
         return userDto;
     }
 }
